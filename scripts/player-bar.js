@@ -22,7 +22,10 @@
     if (previousSongIndex == -1 ) { return; }
     const previousSong = album.songs[previousSongIndex];
     helper.playPauseAndUpdate(previousSong);
+
   });
+
+
 
   $('#time-control input').on('input', function (event){
     player.skipTo(event.target.value);
