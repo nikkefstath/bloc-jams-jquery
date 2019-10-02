@@ -4,6 +4,5 @@ class Helper {
     const totalTime = player.getDuration();
     $('#time-control .total-time').text( totalTime );
   }
-  
 }
 const helper = new Helper();
