@@ -22,6 +22,7 @@
     if (previousSongIndex == -1 ) { return; }
     const previousSong = album.songs[previousSongIndex];
     helper.playPauseAndUpdate(previousSong);
+
   });
 
   $('#time-control input').on('input', function (event){
@@ -37,7 +38,8 @@
     const currentTime = player.getTime();
     const duration = player.getDuration();
     const percent = (currentTime/duration) * 100;
-    $('#time-control .current-time').text(currentTime);
+    $('#time-control .current-time').text( player.prettyTime(currentTime) );
     $('#time-control input').val(percent);
+    $("#time-control .total-time").text(player.prettyTime(duration));
   }, 1000);
-}
+};
